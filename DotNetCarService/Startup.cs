@@ -10,9 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.Swagger;
 
-namespace sample_demo
+namespace DotNetCarService
 {
     public class Startup
     {
@@ -27,11 +26,6 @@ namespace sample_demo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,18 +41,6 @@ namespace sample_demo
             }
 
             app.UseHttpsRedirection();
-
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample Demo V1");
-                c.RoutePrefix = string.Empty;
-            });
-
             app.UseMvc();
         }
     }
