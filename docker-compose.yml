@@ -1,0 +1,6 @@
+version: '3'
+services:
+    car-service:
+        image: docker.projetas.com.br/dotnet-car-service:latest
+        ports:
+            - 5000:80
