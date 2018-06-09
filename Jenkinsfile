@@ -12,7 +12,7 @@ def config = [
         key           : "${PROJECT_NAME}:${PROJECT_VERSION}",
         version       : PROJECT_VERSION,
         branch        : env.BRANCH_NAME,
-        language      : 'csharp',
+        language      : 'cs',
         sonarExtras   : '',
         testExtras    : '',
         swarms        : [
