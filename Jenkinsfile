@@ -5,7 +5,7 @@ PROJECT_VERSION = "${env.BRANCH_NAME}:${BUILD_ID}"
 
 def config = [
         activeBranches: ['dev', 'qa', 'master'],
-        nodeLabel     : 'jenkins-slave.amazon-linux.projetas.com.br',
+        nodeLabel     : 'jenkins-slave.projetas.com.br',
         name          : 'Dotnet Car Service',
         image         : PROJECT_NAME,
         stack         : PROJECT_NAME,
